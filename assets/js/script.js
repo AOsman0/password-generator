@@ -1,33 +1,10 @@
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
-//get password criteria function
-const getPasswordCriteria = () => {
-  const lowercase = confirm("do you want lowercase in your password?");
-  const uppercase = confirm("do you want uppercase in your password?");
-  const numeric = confirm("do you want numbers in your password?");
-  const specialCharacter = confirm(
-    "do you want special characters in your password?"
-  );
-  const essentialsCriteria = [];
 
-  if (lowercase) {
-    essentialsCriteria.push("abcdefghijklmnopqrstuvwxyz");
-  }
-
-  if (uppercase) {
-    essentialsCriteria.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-  }
-
-  if (numeric) {
-    essentialsCriteria.push("0123456789");
-  }
-
-  if (specialCharacter) {
-    essentialsCriteria.push(" !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~");
-  }
-
-  return essentialsCriteria;
-};
+const lowercase = "abcdefghijklmnopqrstuvwxyz";
+const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numbers = "0123456789";
+const specialCharacter = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 //main function to generate random password
 const generatePassword = () => {
@@ -63,6 +40,35 @@ const getPasswordLength = () => {
   if (passwordLengthNum >= 8 && passwordLengthNum <= 128) {
     return passwordLengthNum;
   } else alert("please enter a valid password");
+};
+
+//get password criteria function
+const getPasswordCriteria = () => {
+  const lowercaseQuestion = confirm("do you want lowercase in your password?");
+  const uppercaseQuestion = confirm("do you want uppercase in your password?");
+  const numericQuestion = confirm("do you want numbers in your password?");
+  const specialCharacterQuestion = confirm(
+    "do you want special characters in your password?"
+  );
+  const essentialsCriteria = [];
+
+  if (lowercaseQuestion) {
+    essentialsCriteria.push(lowercase);
+  }
+
+  if (uppercaseQuestion) {
+    essentialsCriteria.push(uppercase);
+  }
+
+  if (numericQuestion) {
+    essentialsCriteria.push(numbers);
+  }
+
+  if (specialCharacterQuestion) {
+    essentialsCriteria.push(specialCharacter);
+  }
+
+  return essentialsCriteria;
 };
 
 //create random password function
