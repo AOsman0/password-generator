@@ -1,45 +1,5 @@
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
-
-//main function to generate random password
-const generatePassword = () => {
-  // get the password length
-  const passwordLength = getPasswordLength();
-
-  if (passwordLength) {
-
-    // calling password critera function
-    const passwordCriteria = getPasswordCriteria();
-
-    if (passwordCriteria.length === 0) {
-      alert("please at least choose an option")
-
-    }else{
-
-      // create random password
-      const randomPassword = createRandomPassword(passwordLength, passwordCriteria);
-      
-      return randomPassword;
-
-    }
-  }
-
-};
-
-
-//get password length function
-const getPasswordLength = () => {
-  const promptLength = prompt("What is your desired password length?");
-  console.log(promptLength);
-
-  const passwordLengthNum = parseInt(promptLength, 10);
-  console.log("passwordLengthNum: " + passwordLengthNum);
-
-  if (passwordLengthNum >= 8 && passwordLengthNum <= 128) {
-    return passwordLengthNum;
-  } else alert("please enter a valid password");
-};
-
 //get password criteria function
 const getPasswordCriteria = () => {
   const lowercase = confirm("do you want lowercase in your password?");
@@ -69,6 +29,42 @@ const getPasswordCriteria = () => {
   return essentialsCriteria;
 };
 
+//main function to generate random password
+const generatePassword = () => {
+  // get the password length
+  const passwordLength = getPasswordLength();
+
+  if (passwordLength) {
+    // calling password critera function
+    const passwordCriteria = getPasswordCriteria();
+
+    if (passwordCriteria.length === 0) {
+      alert("please at least choose an option");
+    } else {
+      // create random password
+      const randomPassword = createRandomPassword(
+        passwordLength,
+        passwordCriteria
+      );
+
+      return randomPassword;
+    }
+  }
+};
+
+//get password length function
+const getPasswordLength = () => {
+  const promptLength = prompt("What is your desired password length?");
+  console.log(promptLength);
+
+  const passwordLengthNum = parseInt(promptLength, 10);
+  console.log("passwordLengthNum: " + passwordLengthNum);
+
+  if (passwordLengthNum >= 8 && passwordLengthNum <= 128) {
+    return passwordLengthNum;
+  } else alert("please enter a valid password");
+};
+
 //create random password function
 const createRandomPassword = (passwordLength, passwordCriteria) => {
   const passwordArray = [];
@@ -80,7 +76,8 @@ const createRandomPassword = (passwordLength, passwordCriteria) => {
     //get random categories
     const randomCategory = passwordCriteria[randomCategoriesIndex];
     //get random index
-    const randomIndex = Math.floor(Math.random() * passwordCriteria.length);
+    const randomIndex = Math.floor(Math.random() * randomCategory.length);
+    console.log("randomIndex", randomIndex);
     //get random character
     const randomCharacter = randomCategory.charAt(randomIndex);
     passwordArray.push(randomCharacter);

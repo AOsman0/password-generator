@@ -12,14 +12,14 @@ This task had involved using functions , arrays and key java script concepts to 
 
 # Screenshots
 
-![screenshot-1](./Assets/screenshot-1.png)
-![screenshot-2](./Assets/screenshot-2.png)
-![screenshot-3](./Assets/screenshot-3.png)
-![screenshot-4](./Assets/screenshot-4.png)
-![screenshot-5](./Assets/screenshot-5.png)
-![screenshot-6](./Assets/screenshot-6.png)
-![screenshot-7](./Assets/screenshot-7.png)
-![screenshot-8](./Assets/screenshot-8.png)
+![screenshot-1](./assets/images%20/screenshot-1.png)
+![screenshot-2](./assets/images%20/screenshot-2.png)
+![screenshot-3](./assets/images%20/screenshot-3.png)
+![screenshot-4](./assets/images%20/screenshot-4.png)
+![screenshot-5](./assets/images%20/screenshot-5.png)
+![screenshot-6](./assets/images%20/screenshot-6.png)
+![screenshot-7](./assets/images%20/screenshot-7.png)
+![screenshot-8](./assets/images%20/screenshot-8.png)
 
 # Technology Used
 
